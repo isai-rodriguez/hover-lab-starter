@@ -57,7 +57,10 @@ body {
   gap: var(--space);
 }
 
+
+
 .state-button {
+
   padding: var(--space-small) var(--space);
   border: none;
   border-radius: 999px;
@@ -75,6 +78,29 @@ body {
 
 /* YOUR CODE: Lab 1 states (:hover, :focus-visible, :active) */
 
+.state-button:hover,
+.state-button:focus{
+  color:var(--extra-color);
+  background-color: var(--primary-color);
+}
+
+.state-link:hover,
+.state-link:focus-visible {
+  color:var(--triadic-color);
+}
+
+.state-button:focus-visible,
+.state-link:focus-visible{
+  outline:3px solid var(--triadic-color);
+  outline-offset: 4px;
+}
+.state-button:active{
+  transform: scale(0.92);
+}
+.state-button, 
+.state-link{
+  transition: var(--contrast-color) ease, background-color 0.3s ease, var(--triadic-color) 0.15
+}
 
 
 
@@ -103,6 +129,43 @@ body {
 }
 
 /* YOUR CODE: Lab 2 timing functions (one per racer) */
+.racer-linear{
+transition-property: all;
+transition-duration: 2s;
+transition-timing-function: linear;
+transition-delay:0.1s
+}
+
+.racer-ease{
+transition-property: all;
+transition-duration: 2s;
+transition-timing-function: ease-in;
+transition-delay:0.1s
+}
+.racer-ease-in{
+transition-property: all;
+transition-duration: 2s;
+transition-timing-function: ease-in;
+transition-delay:0.1s
+}
+.racer-ease-out{
+transition-property: all;
+transition-duration: 6s;
+transition-timing-function: linear;
+transition-delay:0.1s
+}
+.racer-ease-in-out{
+transition-property: all;
+transition-duration: 3s;
+transition-timing-function: ease-in;
+transition-delay:0.1s
+}
+.racer-mine{
+transition-property: all;
+transition-duration: 5s;
+transition-timing-function: linear;
+transition-delay:0.1s
+}
 
 
 
@@ -128,6 +191,28 @@ body {
 
 /* YOUR CODE: Lab 3 transforms (lift, grow, spin, tilt) */
 
+.tile {
+transition: all 0.3s ease;
+}
+
+.tile-lift:hover{
+  transform: translateY(-10px);
+  box-shadow: 10px 10px #E8B873;
+}
+.tile-grow:hover{
+  transform: scale(3,3);
+}
+.tile-spin:hover{
+  transform: rotate(4turn);
+
+}
+.tile-tilt:hover{
+  transform: rotate(6.6deg)
+}
+
+
+
+
 
 
 
@@ -150,9 +235,39 @@ body {
 }
 
 /* YOUR CODE: Lab 4, six effects */
+.effect-card{
+  transition: all 0.35s ease;
+}
+.effect-1:hover{
+border: var(--contrast-color);
+border-radius: 50%;
+transform: scale(1.05);
+}
+.effect-2:hover{
+  box-shadow: 0.4px 6px var(--triadic-color);
+  letter-spacing: 0.3em;
+}
+.effect-3:hover{
+color: var(--contrast-color);
+background-color: var(--contrast-color);
+border-radius: 30px;
+}
 
-
-
+.effect-4:hover{
+color: var(--contrast-color);
+background-color: var(--primary-color);
+}
+.effect-5:hover{
+  color: var(--extra-color);
+  background-color: var(--triadic-color);
+  box-shadow: 0 0 20px var(--primary-color);
+  border-radius: 20px;
+}
+.effect-6:hover{
+  background-color: #1A787C;
+  border-color:var(--contrast-color);
+  border-width: 10px;
+}
 /* ---------- PC: 1024px and up ---------- */
 @media (min-width: 1024px) {
   .tile-row {
